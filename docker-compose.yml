@@ -1,0 +1,17 @@
+version: '2.1'
+
+services:
+  servuo:
+    build: .   
+    image: 'servuo-alpine'
+    ports:
+    - "2593:2593/tcp"
+    volumes:
+      - serveuo_config:/app/Config
+      - serveuo_data:/app/Data
+      - serveuo_spawns:/app/Spawns
+
+volumes:
+  serveuo_data:
+  serveuo_config:
+  serveuo_spawns:
